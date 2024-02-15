@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fiber-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fiber-test
+  template:
+    metadata:
+      labels:
+        app: fiber-test
+    spec:
+      containers:
+      - name: fiber-test-container
+        image: thepie137/fiber-test:v1
+        ports:
+        - containerPort: 80
