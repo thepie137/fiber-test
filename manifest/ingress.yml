@@ -7,14 +7,13 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  
-host: pieapp
-  http:
-    paths:
-path: /
-    pathType: Prefix
-    backend:
-      service:
-        name: pieapp-service
-        port:
-          number: 80
+  - host: pieapp
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pieapp-service
+            port:
+              number: 80
