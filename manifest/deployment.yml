@@ -16,4 +16,4 @@ spec:
       - name: fiber-test-container
         image: thepie137/fiber-test:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8005

@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pieapp-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  
+host: pieapp
+  http:
+    paths:
+path: /
+    pathType: Prefix
+    backend:
+      service:
+        name: pieapp-service
+        port:
+          number: 80
